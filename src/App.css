@@ -1,19 +1,23 @@
+.App {
+  background-color: navy;
+}
+
 .nav {
   list-style-type: none;
-  background-color: cadetblue;
+  background-color: crimson;
   padding: 5px;
-  font-size: 26px;
+  font-size: 30px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  text-decoration: none;
+  color: azure;
 }
 
 .post_card {
-  border: 2px solid black;
-  margin: 40px;
+  border: 2px solid white;
   padding: 20px;
   font-size: 24px;
-  color: crimson;
-  text-decoration: none;
+  color: beige;
   width: 50%;
 }
 
@@ -21,4 +25,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.PostBoxes {
+  text-decoration: none;
+}
+
+.details {
+  background-color: navy;
+  height: 100vh
+}
+.title {
+  color: aliceblue;
+}
+.body {
+  color: aliceblue;
+}
+.comments {
+  color: aliceblue;
+  font-size: 20px;
+  list-style-type: square;
 }

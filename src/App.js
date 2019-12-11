@@ -25,10 +25,10 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div>
           <nav className="nav">
             <ul>
-              <li className="nav"><Link to="/">Home</Link></li>
+              <li className="nav"><Link to="/" className="nav">Home</Link></li>
             </ul>
           </nav>
         </div>

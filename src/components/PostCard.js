@@ -10,7 +10,7 @@ class PostCard extends React.Component {
     render() {
         return (
             // <Link to={`/posts/${this.props.info.id}`} onClick={ this.getFunction }>
-            <Link to={{
+            <Link className="PostBoxes" to={{
                     pathname: `/posts/${this.props.info.id}`, 
                     state:{
                     title:this.props.info.title,

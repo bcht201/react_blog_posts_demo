@@ -1,5 +1,6 @@
 import React from 'react';
 import PostCard from './PostCard';
+import '../App.css';
 
 
 class PostContainer extends React.Component {
@@ -18,11 +19,13 @@ class PostContainer extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Here are the posts</h1>
-                {this.state.posts.length === 0 ? <p>didnt work</p> : 
-                this.state.posts.map(card => <PostCard key={card.id} info = {card} updateState={this.props.updateState}/>)}
-            </div>
+            <div className="App">
+                <div className="details_container">
+                    {this.state.posts.length === 0 ? <p>didnt work</p> : 
+                    this.state.posts.map(card => <PostCard key={card.id} info = {card} updateState={this.props.updateState}/>)}
+                </div>            
+            </div>  
+
         )
     }
 }
