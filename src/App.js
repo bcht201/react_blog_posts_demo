@@ -9,22 +9,39 @@ import {
   Link
 } from "react-router-dom";
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <nav>
-          <ul>
-            <li className="navbar"><Link to="/">Home</Link></li>
-          </ul>
-        </nav>
-      </div>
-      <Switch>
-        <Route exact path="/" component={PostContainer}/>
-        <Route path="/posts/:index" component={Details}/>
-      </Switch>
-    </Router>
-  );
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      title: "",
+      body: ""
+    }
+  }
+
+  postUpdate = (titleUpdate, bodyUpdate) => {
+    this.setState( { title : titleUpdate, body : bodyUpdate} )
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <nav className="nav">
+            <ul>
+              <li className="nav"><Link to="/">Home</Link></li>
+            </ul>
+          </nav>
+        </div>
+        <Switch>
+          <Route exact path="/">
+            <PostContainer updateState={this.postUpdate}/>
+          </Route>
+          <Route path="/posts/:index" render={(props) => <Details {...props} title={this.state.title} body={this.state.body}/> }/>
+          
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;

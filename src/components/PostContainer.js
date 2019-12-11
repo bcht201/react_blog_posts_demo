@@ -19,9 +19,9 @@ class PostContainer extends React.Component {
     render() {
         return (
             <div>
-                <h1>This is Post Container</h1>
+                <h1>Here are the posts</h1>
                 {this.state.posts.length === 0 ? <p>didnt work</p> : 
-                this.state.posts.map(card => <PostCard key={card.id} info = {card}/>)}
+                this.state.posts.map(card => <PostCard key={card.id} info = {card} updateState={this.props.updateState}/>)}
             </div>
         )
     }
