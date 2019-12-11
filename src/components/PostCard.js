@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 function PostCard(props) {
-    console.log(props.key);
     return (
         <Link to={`/posts/${props.info.id}`}>
             <div>

@@ -16,15 +16,12 @@ componentDidMount() {
     .then((result) => this.setState( { info: result.slice(0,10) } ));
 }
 render(){
-    console.log(this.state.index);
     return(
         <div>
             <h3>{this.state.index}</h3>
             <ul>
-                {this.state.info.map(comment => <li>{comment.name}</li>)}
+                {this.state.info.map((comment, index) => <li key={index}>{comment.name}</li>)}
             </ul>
-            
-            {console.log(this.state.info)}
         </div>
     )
 }

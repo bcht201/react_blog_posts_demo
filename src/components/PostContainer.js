@@ -17,7 +17,6 @@ class PostContainer extends React.Component {
     }
 
     render() {
-        console.log(this.state.posts);
         return (
             <div>
                 <h1>This is Post Container</h1>
