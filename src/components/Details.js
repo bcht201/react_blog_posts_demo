@@ -1,30 +1,29 @@
 import React from 'react';
 
+
 class Details extends React.Component{
     constructor(props){
         super(props);
         this.state={
             info:[],
-            index: props.match.params.index
+            index: this.props.match.params.index
         }
     }
 
 componentDidMount() {
-
     fetch("https://jsonplaceholder.typicode.com/comments?postId=" + this.state.index)
     .then((response) => response.json())
     .then((result) => this.setState( { info: result.slice(0,10) } ));
 }
+
 render(){
-    console.log(this.state.index);
     return(
         <div>
-            <h3>{this.state.index}</h3>
+            <h1>title: {this.props.title}</h1>
+            <h2>body: {this.props.body}</h2>
             <ul>
-                {this.state.info.map(comment => <li>{comment.name}</li>)}
+                {this.state.info.map((comment, index) => <li key={index}>{comment.name}</li>)}
             </ul>
-            
-            {console.log(this.state.info)}
         </div>
     )
 }
